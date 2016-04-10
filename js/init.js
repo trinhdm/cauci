@@ -62,7 +62,7 @@ var navbaranimate = (function() {
 	[].slice.call(document.querySelectorAll('#caucinav')).forEach(function(menu) {
 		var menuItems = menu.querySelectorAll('.navlink'),
 			setCurrent = function(ev) {
-				ev.preventDefault();
+				// ev.preventDefault();
 				var item = ev.target.parentNode; // li
 				// return if already current
 				if (classie.has(item, 'navlink-active')) {
