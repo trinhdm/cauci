@@ -45,6 +45,11 @@
     overflow: inherit;
   }
 
+  .carousel-control {
+    text-shadow: 0 0 0 rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0);
+  }
+
   .carousel-control.left, .carousel-control.right {
     background-image: none;
     color: #555;
@@ -53,6 +58,7 @@
   .item-active, .item {
     text-align: center;
   }
+
 }
 
 

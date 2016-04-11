@@ -40,7 +40,7 @@
 
 
 
-.grid {
+.events-grid {
 	position: relative;
 	clear: both;
 	margin: 0 auto;
@@ -48,39 +48,41 @@
 	max-width: 1000px;
 	list-style: none;
 	text-align: center;
+
+  &:hover {
+    cursor: default;
+  }
+
+  figure {
+  	position: relative;
+  	float: left;
+  	overflow: hidden;
+  	height: auto;
+  	text-align: center;
+  	cursor: pointer;
+
+    img {
+    	position: relative;
+    	display: block;
+    	opacity: 0.8;
+    }
+
+    figcaption {
+    	padding: 2em;
+    	color: #fff;
+    	font-size: 1.25em;
+    	-webkit-backface-visibility: hidden;
+    	backface-visibility: hidden;
+
+      &::before, &::after {
+        pointer-events: none;
+      }
+    }
+  }
 }
 
-/* Common style */
-.grid figure {
-	position: relative;
-	float: left;
-	overflow: hidden;
-	height: auto;
-	text-align: center;
-	cursor: pointer;
-}
-
-.grid figure img {
-	position: relative;
-	display: block;
-	opacity: 0.8;
-}
-
-.grid figure figcaption {
-	padding: 2em;
-	color: #fff;
-	font-size: 1.25em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.grid figure figcaption::before,
-.grid figure figcaption::after {
-	pointer-events: none;
-}
-
-.grid figure figcaption,
-.grid figure figcaption > a {
+.events-grid figure figcaption,
+.events-grid figure figcaption > a {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -88,9 +90,7 @@
 	height: 100%;
 }
 
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
-.grid figure figcaption > a {
+.events-grid figure figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
 	white-space: nowrap;
@@ -98,21 +98,21 @@
 	opacity: 0;
 }
 
-.grid figure h2 {
+.events-grid figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
 
-.grid figure h2 span {
+.events-grid figure h2 span {
 	font-weight: 800;
 }
 
-.grid figure h2,
-.grid figure p {
+.events-grid figure h2,
+.events-grid figure p {
 	margin: 0;
 }
 
-.grid figure p {
+.events-grid figure p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }

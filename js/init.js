@@ -15,7 +15,10 @@ $(function() {
 });
 
 
-
+$('.eventsCarousel').carousel({
+    pause: true,
+    interval: false
+});
 
 
 // header changes size when you scroll down
