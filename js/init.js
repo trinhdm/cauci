@@ -1,3 +1,4 @@
+// smooth scrolling
 $(function() {
   $('a[href*="#"]:not([href="#mainCarousel"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -17,11 +18,10 @@ $(function() {
 
 
 
-
-var navbaranimate = (function() {
+// header changes size when you scroll down
+$(function() {
 
 	var docElem = document.documentElement,
-		header = document.querySelector( '#caucinav' ),
 		didScroll = false,
 		changeHeaderOn = 300;
 
@@ -37,10 +37,10 @@ var navbaranimate = (function() {
 	function scrollPage() {
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
-			classie.add( header, 'caucinav-shrink' );
+			$('#caucinav').addClass('caucinav-shrink');
 		}
 		else {
-			classie.remove( header, 'caucinav-shrink' );
+			$('#caucinav').removeClass('caucinav-shrink');
 		}
 		didScroll = false;
 	}
@@ -50,8 +50,7 @@ var navbaranimate = (function() {
 	}
 
 	init();
-
-})();
+});
 
 
 
@@ -62,6 +61,7 @@ var navbaranimate = (function() {
 	[].slice.call(document.querySelectorAll('#caucinav')).forEach(function(menu) {
 		var menuItems = menu.querySelectorAll('.navlink'),
 			setCurrent = function(ev) {
+        // $('#caucinav').removeClass('caucinav-shrink');
 				// ev.preventDefault();
 				var item = ev.target.parentNode; // li
 				// return if already current
